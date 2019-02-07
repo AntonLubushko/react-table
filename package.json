@@ -2,7 +2,7 @@
   "name": "blogs",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AntonLubushko.github.io/",
+  "homepage": "https://antonlubushko.github.io/react-table/",
   "dependencies": {
     "axios": "^0.18.0",
     "connected-react-router": "^6.2.2",
