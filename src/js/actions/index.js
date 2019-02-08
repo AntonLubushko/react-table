@@ -36,7 +36,7 @@ export function getPost(id) {
       let { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
       dispatch({ type: POST_LOADED, payload: data });
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   }
 };
