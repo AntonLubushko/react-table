@@ -27,7 +27,7 @@ class SinglePost extends Component {
                   <th>Text</th>
                 </tr>
                 <tr>
-                  <td>{this.props.post.userId}</td>
+                  <td>{this.props.post.id}</td>
                   <td>{this.props.post.title}</td>
                   <td>{this.props.post.body}</td>
                 </tr>
