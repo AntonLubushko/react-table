@@ -4,16 +4,17 @@ import axios from "axios";
 const START_DATE = 1400000000000;
 const END_DATE = Date.now();
 const ALL_TIME = END_DATE - START_DATE;
+const VIEWS_COLUMN = 2;
+const DATE_COLUMN = 3;
 
-export function changeViewsDirection(orderDirection) {
+export function changeDirection(orderedColumnId, orderDirection) {
   return function(dispatch) {
-    dispatch({ type: VIEWS_DIRECTION_CHANGED, payload: orderDirection });
-  }
-};
-
-export function changeDateDirection(orderDirection) {
-  return function(dispatch) {
-    dispatch({ type: DATE_DIRECTION_CHANGED, payload: orderDirection });
+    if (orderedColumnId === VIEWS_COLUMN) {
+      dispatch({ type: VIEWS_DIRECTION_CHANGED, payload: orderDirection });
+    }
+    if (orderedColumnId === DATE_COLUMN) {
+      dispatch({ type: DATE_DIRECTION_CHANGED, payload: orderDirection });
+    }
   }
 };
 

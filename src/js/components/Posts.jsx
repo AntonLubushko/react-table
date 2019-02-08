@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getPosts } from "../actions";
-import { changeViewsDirection, changeDateDirection } from "../actions";
+import { changeDirection } from "../actions";
 import MaterialTable from "material-table";
 import moment from "moment";
 
 const SYMBOLS_TEXT = 30;
-const VIEWS_COLUMN = 2;
-const DATE_COLUMN = 3;
 
 export class Post extends Component {
 
@@ -51,16 +49,10 @@ export class Post extends Component {
               this.props.history.push(`/posts/${rowData.id}`);
             },
           }
-
         ]}
           
         onOrderChange={(orderedColumnId, orderDirection)=>{
-          if (orderedColumnId === VIEWS_COLUMN) {
-            this.props.changeViewsDirection(orderDirection);
-          }
-          if (orderedColumnId === DATE_COLUMN) {
-            this.props.changeDateDirection(orderDirection);
-          }
+            this.props.changeDirection(orderedColumnId, orderDirection);
         }}
 
         data={this.props.posts}
@@ -91,5 +83,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps, { changeDateDirection, getPosts, changeViewsDirection }
+  mapStateToProps, { getPosts, changeDirection }
 )(Post);
