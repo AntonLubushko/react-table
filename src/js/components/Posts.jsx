@@ -13,8 +13,6 @@ export class Post extends Component {
 
   componentDidMount() {
     this.props.getPosts();
-    console.log("date dir", this.props.dateDirection)
-    console.log("views dir", this.props.viewsDirection)
   }
 
   render() {
@@ -35,13 +33,13 @@ export class Post extends Component {
             searchable: false,
             defaultSort: this.props.viewsDirection
           },
-          { 
-            title: 'CreatedAt', 
-            field: 'createdAt', 
-            type:'date',
+          {
+            title: 'CreatedAt',
+            field: 'createdAt',
+            type: 'date',
             defaultSort: this.props.dateDirection,
             searchable: false,
-            render: rowData =>  moment(rowData.createdAt).format("DD MMM YYYY HH:mm")
+            render: rowData => moment(rowData.createdAt).format("DD MMM YYYY HH:mm")
           }
         ]}
        
@@ -57,9 +55,10 @@ export class Post extends Component {
         ]}
           
         onOrderChange={(orderedColumnId, orderDirection)=>{
-          if (orderedColumnId === VIEWS_COLUMN){
+          if (orderedColumnId === VIEWS_COLUMN) {
             this.props.changeViewsDirection(orderDirection);
-          }else{
+          }
+          if (orderedColumnId === DATE_COLUMN) {
             this.props.changeDateDirection(orderDirection);
           }
         }}

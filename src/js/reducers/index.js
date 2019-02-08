@@ -3,6 +3,8 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
 const initialState = {
+  dateDirection: null,
+  viewsDirection: null,
   remotePosts: [],
   currentPost: {}
 };

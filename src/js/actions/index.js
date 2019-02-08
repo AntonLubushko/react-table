@@ -6,14 +6,12 @@ const END_DATE = Date.now();
 const ALL_TIME = END_DATE - START_DATE;
 
 export function changeViewsDirection(orderDirection) {
-  console.log("views change")
   return function(dispatch) {
     dispatch({ type: VIEWS_DIRECTION_CHANGED, payload: orderDirection });
   }
 };
 
 export function changeDateDirection(orderDirection) {
-  console.log("date change")
   return function(dispatch) {
     dispatch({ type: DATE_DIRECTION_CHANGED, payload: orderDirection });
   }
