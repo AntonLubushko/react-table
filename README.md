@@ -5,3 +5,5 @@ To run application you should:
 3 npm install
 4 npm start
 5 Open browser on localhost:3000
+
+For demo go https://react-table-anton.herokuapp.com/posts
